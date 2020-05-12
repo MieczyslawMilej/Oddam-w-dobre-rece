@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function HomeAbout() {
-  return <div className="about">HomeAbout</div>;
+  return (
+    <section className="about">
+      <div className="wrapper">HomeAbout</div>
+    </section>
+  );
 }

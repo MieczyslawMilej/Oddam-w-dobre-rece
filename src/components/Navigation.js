@@ -12,12 +12,12 @@ export default function Navigation() {
           <NavLink to="/login">Zaloguj</NavLink>
         </li>
         <li>
-          <NavLink to="/register">Załóż konto</NavLink>
+          <NavLink className="register-link" to="/register">Załóż konto</NavLink>
         </li>
       </ul>
       <ul className="main-nav">
         <li>
-          <Link to="home" smooth={smoothToggle} duration={1000}>
+          <Link className="active" to="home" smooth={smoothToggle} duration={1000}>
             Start
           </Link>
         </li>

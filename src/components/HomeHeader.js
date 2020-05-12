@@ -8,8 +8,8 @@ export default function HomeHeader() {
     <header>
       <div className="wrapper">
         <Navigation />
+        <img className="hero-image" src={heroImage} alt="decoration"/>
         <HeaderHero />
-        <img src={heroImage} alt="decoration"/>
       </div>
     </header>
   );
