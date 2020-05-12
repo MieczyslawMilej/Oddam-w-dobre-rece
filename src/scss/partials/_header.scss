@@ -1,0 +1,13 @@
+header {
+   .wrapper {
+     position: relative;
+     height: 963px;
+
+     .hero-image {
+       position: absolute;
+       top: -10px;
+       left: -70%;
+       z-index: -1;
+     }
+   }
+}
