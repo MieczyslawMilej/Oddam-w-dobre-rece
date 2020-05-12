@@ -10,12 +10,12 @@ import Footer from "./Footer";
 export default function Home() {
   return (
     <div className="Home">
-      <HomeHeader />
+      <HomeHeader id="home" />
       <HomeThreeColumns />
-      <HomeSteps />
-      <HomeAbout />
-      <HomeHelp />
-      <Footer />
+      <HomeSteps id="steps" />
+      <HomeAbout id="about" />
+      <HomeHelp id="help" />
+      <Footer id="footer"/>
     </div>
   );
 }
