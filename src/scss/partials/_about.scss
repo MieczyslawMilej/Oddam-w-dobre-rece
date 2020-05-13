@@ -2,7 +2,7 @@
   background-color: $color-bg-icons;
 
   .wrapper {
-    width: 1600px;
+    max-width: 1600px;
     display: flex;
     flex: 1;
   }
@@ -34,7 +34,7 @@
 
 .about-img {
   overflow: hidden;
-  max-width: 50%;
+  width: 50%;
   height: 100%;
 
   img {

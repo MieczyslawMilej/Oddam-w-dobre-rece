@@ -1,0 +1,20 @@
+@media screen and (max-width: 800px) {
+  .about {
+    .wrapper {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .content-wrapper {
+    width: 100%;
+    padding: 0px;
+
+    .about-text {
+      padding: 10px;
+    }
+  }
+
+  .about-img {
+    width: 100%;
+  }
+}
