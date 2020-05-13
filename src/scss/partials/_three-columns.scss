@@ -6,13 +6,15 @@
 
   .wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
 .three-box {
   max-width: 334px;
   text-align: center;
+  margin: 0 40px;
 
   .three-number {
     font-size: 90px;
@@ -23,19 +25,19 @@
     color: $color-organizations-text;
   }
 
-  .three-title {
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: -0.36px;
-    line-height: 30px;
-  }
+}
 
-  .three-text {
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: -0.32px;
-    line-height: 190%;
-  }
+.title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: -0.36px;
+  line-height: 30px;
+}
 
+.text {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: -0.32px;
+  line-height: 190%;
 }
