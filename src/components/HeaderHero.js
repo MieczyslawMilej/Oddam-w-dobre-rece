@@ -6,7 +6,7 @@ import decoration from "../assets/Decoration.svg";
 export default function HeaderHero() {
   return (
     <div className="heading-wrapper">
-      <h1>
+      <h1 className="heading">
         Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
       </h1>
       <div className="title-wrapper">
