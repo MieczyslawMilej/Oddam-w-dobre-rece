@@ -16,5 +16,15 @@
 
   .about-img {
     width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .help {
+    .wrapper {
+      padding: 0 10px 80px 10px;
+    }
   }
 }

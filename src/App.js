@@ -8,6 +8,7 @@ import Register from "./components/Register";
 function App() {
   return (
     <div className="App">
+
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
