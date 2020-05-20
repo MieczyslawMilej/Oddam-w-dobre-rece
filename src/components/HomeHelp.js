@@ -29,6 +29,9 @@ export default function HomeHelp() {
   //show content of specific data
 
   const getData = number => {
+    
+    setCurrentPage(1)
+
     if (number === 2) {
       return setShowData(organizations);
     } else if (number === 3) {
@@ -36,6 +39,7 @@ export default function HomeHelp() {
     } else if (number === 1) {
       return setShowData(fundations);
     }
+
   };
 
   return (

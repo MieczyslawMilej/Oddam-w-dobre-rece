@@ -57,8 +57,8 @@ const validate = values => {
   return errors;
 };
 
-function getStyles(errors, fieldName) {
-  if (getIn(errors, fieldName)) {
+function getStyles(errors, fieldName, touched) {
+  if (getIn(touched, fieldName) && (getIn(errors, fieldName))) {
     return {
       borderColor: "red"
     };
@@ -80,7 +80,7 @@ export default function Login() {
           onSubmit={onSubmit}
           validate={validate}
         >
-          {({ errors, status }) => (
+          {({ errors, status, touched }) => (
             <Form className="form">
               <h1 className="heading">Zaloguj się</h1>
               <img
@@ -92,7 +92,7 @@ export default function Login() {
                 <label htmlFor="email">
                   Email
                   <Field
-                    style={getStyles(errors, "email")}
+                    style={getStyles(errors, "email", touched)}
                     name="email"
                     id="email"
                     type="email"
@@ -106,7 +106,7 @@ export default function Login() {
                 <label htmlFor="password">
                   Hasło
                   <Field
-                    style={getStyles(errors, "password")}
+                    style={getStyles(errors, "password", touched)}
                     name="password"
                     id="password"
                     type="password"

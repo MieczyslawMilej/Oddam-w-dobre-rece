@@ -13,14 +13,8 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-        </Switch>
-        <Switch>
           <Route exact path="/login" component={Login} />
-        </Switch>
-        <Switch>
           <Route exact path="/register" component={Register} />
-        </Switch>
-        <Switch>
           <Route exact path="/wylogowano" component={Logout} />
         </Switch>
       </Router>

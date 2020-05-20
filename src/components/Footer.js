@@ -69,8 +69,8 @@ const validate = values => {
   return errors;
 };
 
-function getStyles(errors, fieldName) {
-  if (getIn(errors, fieldName)) {
+function getStyles(errors, fieldName, touched) {
+  if (getIn(touched, fieldName) && (getIn(errors, fieldName))) {
     return {
       borderColor: "red"
     };
@@ -87,7 +87,7 @@ export default function Footer() {
             onSubmit={onSubmit}
             validate={validate}
           >
-            {({ errors, status }) => (
+            {({ errors, status, touched }) => (
               <Form className="form">
                 <h1 className="heading">Skontaktuj się z nami</h1>
                 <img
@@ -108,7 +108,7 @@ export default function Footer() {
                   <label htmlFor="name">
                     Wpisz swoje imię
                     <Field
-                      style={getStyles(errors, "name")}
+                      style={getStyles(errors, "name", touched)}
                       name="name"
                       id="name"
                       type="text"
@@ -123,7 +123,7 @@ export default function Footer() {
                   <label className="spacer" htmlFor="email">
                     Wpisz swój email
                     <Field
-                      style={getStyles(errors, "email")}
+                      style={getStyles(errors, "email", touched)}
                       name="email"
                       id="email"
                       type="text"
@@ -139,7 +139,7 @@ export default function Footer() {
                 <label htmlFor="message">
                   Wpisz swoją wiadomość
                   <Field
-                    style={getStyles(errors, "message")}
+                    style={getStyles(errors, "message", touched)}
                     as="textarea"
                     name="message"
                     id="message"
