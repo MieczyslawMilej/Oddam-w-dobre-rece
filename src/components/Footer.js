@@ -88,7 +88,7 @@ export default function Footer() {
             validate={validate}
           >
             {({ errors, status }) => (
-              <Form>
+              <Form className="form">
                 <h1 className="heading">Skontaktuj się z nami</h1>
                 <img
                   className="footer-decoration"

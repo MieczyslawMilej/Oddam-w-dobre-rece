@@ -23,84 +23,84 @@
 
 .form-wrapper {
   width: 530px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-family: $font-base;
+  background-color: #fff;
+  position: relative;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 30px rgba(#000000, 0.13);
 
-  form {
+  label,
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+  }
+
+  label {
+    padding-bottom: 40px;
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #707070;
+  }
+  ::placeholder {
+    opacity: 0.26;
+  }
+  .row {
     display: flex;
-    flex-direction: column;
-    text-align: left;
-    font-family: $font-base;
-    background-color: #fff;
-    position: relative;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 10px 10px 30px rgba(#000000, 0.13);
 
-    label,
-    input,
-    textarea {
-      display: block;
-      width: 100%;
-      background-color: inherit;
-    }
-
-    label {
-      padding-bottom: 40px;
-      font-weight: 600;
-    }
-
-    input,
-    textarea {
-      padding: 10px 0;
-      border: none;
-      border-bottom: 1px solid #707070;
-    }
-    ::placeholder {
-      opacity: 0.26;
-    }
-    .row {
-      display: flex;
-
-      .spacer {
-        margin-left: 10px;
-      }
-    }
-
-    .btn-form {
-      min-width: 150px;
-      padding: 13px 50px;
-      font-size: 18px;
-      line-height: 32px;
-      align-self: flex-end;
-      margin: 0;
-    }
-
-    .invalid {
-      color: red;
-      display: inline-block;
-      font-size: 12px;
-    }
-
-    .red-border {
-      border-color: red;
+    .spacer {
+      margin-left: 10px;
     }
   }
 
-  .alert {
-    position: absolute;
-    top: 145px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    font-weight: bold;
+  .btn-form {
+    min-width: 150px;
+    padding: 13px 50px;
+    font-size: 18px;
+    line-height: 32px;
+    align-self: flex-end;
+    margin: 0;
   }
 
-  .alert-error {
+  .invalid {
     color: red;
+    display: inline-block;
+    font-size: 12px;
   }
 
-  .alert-success {
-    color: #2D9E22;
+  .red-border {
+    border-color: red;
   }
+}
+
+.alert {
+  position: absolute;
+  top: 145px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  font-weight: bold;
+}
+
+.alert-error {
+  color: red;
+}
+
+.alert-success {
+  color: #2d9e22;
 }
 
 .bottom-text {
