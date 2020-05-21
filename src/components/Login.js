@@ -1,76 +1,72 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import {
   Formik,
   Form,
   Field,
   ErrorMessage,
-  getIn,
-  FormikHelpers as FormikActions
+  getIn
 } from "formik";
 import { NavLink } from "react-router-dom";
+import { withRouter, Redirect } from "react-router";
+import {AuthContext } from "../Auth.js"
+import app from "../base.js"
 
 import Navigation from "./Navigation";
 import decoration from "../assets/Decoration.svg";
 
-const onSubmit = (values, { setStatus, resetForm }: FormikActions<Values>) => {
-  // fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-  //   method: "POST",
-  //   body: JSON.stringify(values),
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   }
-  // })
-  //   .then(res => {
-  //     if (res.status === 200) {
-  //       setStatus({
-  //         sent: true,
-  //         msg: "Wiadomość została wysłana! Wkrótce się skontaktujemy."
-  //       });
-  //       setTimeout(() => {
-  //         resetForm();
-  //       }, 10000);
-  //     }
-  //   })
-  //   .catch(err => {
-  //     setStatus({
-  //       sent: false,
-  //       msg: `Error! ${err}. Coś poszło nie tak.`
-  //     });
-  //   });
-};
 
-const validate = values => {
-  let errors = {};
+function Login({history}) {
 
-  if (!values.email) {
-    errors.email = "Pole nie może być puste";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Podany email jest nieprawidłowy!";
+  const {currentUser} = useContext(AuthContext);
+  console.log(currentUser);
+  const onSubmit = useCallback(
+    async values => {
+      try {
+        await app
+          .auth()
+          .signInWithEmailAndPassword(values.email, values.password);
+        history.push("/");
+      } catch (error) {
+        alert(error);
+      }
+    },
+    [history]
+  );
+
+  const validate = values => {
+    let errors = {};
+
+    if (!values.email) {
+      errors.email = "Pole nie może być puste";
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+      errors.email = "Podany email jest nieprawidłowy!";
+    }
+
+    if (!values.password) {
+      errors.password = "Pole nie może być puste";
+    } else if (values.password.length < 6) {
+      errors.password = "Hasło musi mieć conajmniej 6 znaków!";
+    }
+
+    return errors;
+  };
+
+  function getStyles(errors, fieldName, touched) {
+    if (getIn(touched, fieldName) && (getIn(errors, fieldName))) {
+      return {
+        borderColor: "red"
+      };
+    }
   }
 
-  if (!values.password) {
-    errors.password = "Pole nie może być puste";
-  } else if (values.password.length < 6) {
-    errors.password = "Hasło musi mieć conajmniej 6 znaków!";
-  }
+  const initialValues = {
+    email: "",
+    password: ""
+  };
 
-  return errors;
-};
-
-function getStyles(errors, fieldName, touched) {
-  if (getIn(touched, fieldName) && (getIn(errors, fieldName))) {
-    return {
-      borderColor: "red"
-    };
-  }
+if (currentUser) {
+return <Redirect to="/" />
 }
-
-const initialValues = {
-  email: "",
-  password: ""
-};
-
-export default function Login() {
   return (
     <section className="login">
       <div className="wrapper">
@@ -133,3 +129,5 @@ export default function Login() {
     </section>
   );
 }
+
+export default withRouter(Login)

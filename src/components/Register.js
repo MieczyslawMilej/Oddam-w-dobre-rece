@@ -1,85 +1,70 @@
-import React from "react";
-import {
-  Formik,
-  Form,
-  Field,
-  ErrorMessage,
-  getIn,
-  FormikHelpers as FormikActions
-} from "formik";
+import React, { useCallback } from "react";
+import { Formik, Form, Field, ErrorMessage, getIn } from "formik";
 import { NavLink } from "react-router-dom";
+import { withRouter } from "react-router";
+import app from "../base";
 
 import Navigation from "./Navigation";
 import decoration from "../assets/Decoration.svg";
 
-const onSubmit = (values, { setStatus, resetForm }: FormikActions<Values>) => {
-  // fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
-  //   method: "POST",
-  //   body: JSON.stringify(values),
-  //   headers: {
-  //     "Content-Type": "application/json"
-  //   }
-  // })
-  //   .then(res => {
-  //     if (res.status === 200) {
-  //       setStatus({
-  //         sent: true,
-  //         msg: "Wiadomość została wysłana! Wkrótce się skontaktujemy."
-  //       });
-  //       setTimeout(() => {
-  //         resetForm();
-  //       }, 10000);
-  //     }
-  //   })
-  //   .catch(err => {
-  //     setStatus({
-  //       sent: false,
-  //       msg: `Error! ${err}. Coś poszło nie tak.`
-  //     });
-  //   });
-};
+function Register({ history }) {
 
-const validate = values => {
-  let errors = {};
+  const validate = values => {
+    let errors = {};
 
-  if (!values.email) {
-    errors.email = "Pole nie może być puste";
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = "Podany email jest nieprawidłowy!";
+    if (!values.email) {
+      errors.email = "Pole nie może być puste";
+    } else if (
+      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)
+    ) {
+      errors.email = "Podany email jest nieprawidłowy!";
+    }
+
+    if (!values.password) {
+      errors.password = "Pole nie może być puste";
+    } else if (values.password.length < 6) {
+      errors.password = "Hasło musi mieć conajmniej 6 znaków!";
+    }
+
+    if (!values.password2) {
+      errors.password2 = "Pole nie może być puste";
+    } else if (values.password2.length < 6) {
+      errors.password2 = "Hasło musi mieć conajmniej 6 znaków!";
+    } else if (values.password !== values.password2) {
+      errors.password2 = "Hasło musi być takie samo!";
+    }
+
+    return errors;
+  };
+
+  function getStyles(errors, fieldName, touched) {
+    if (getIn(touched, fieldName) && getIn(errors, fieldName)) {
+      return {
+        borderColor: "red"
+      };
+    }
   }
 
-  if (!values.password) {
-    errors.password = "Pole nie może być puste";
-  } else if (values.password.length < 6) {
-    errors.password = "Hasło musi mieć conajmniej 6 znaków!";
-  }
+  const initialValues = {
+    email: "",
+    password: "",
+    password2: ""
+  };
 
-  if (!values.password2) {
-    errors.password2 = "Pole nie może być puste";
-  } else if (values.password2.length < 6) {
-    errors.password2 = "Hasło musi mieć conajmniej 6 znaków!";
-  } else if (values.password !== values.password2) {
-    errors.password2 = "Hasło musi być takie samo!";
-  }
+  const onSubmit = useCallback(
+    async values => {
+      try {
+        await app
+          .auth()
+          .createUserWithEmailAndPassword(values.email, values.password);
+        history.push("/");
+      } catch (error) {
+        alert(error);
+      }
+    },
+    [history]
+  );
 
-  return errors;
-};
-
-function getStyles(errors, fieldName, touched) {
-  if (getIn(touched, fieldName) && (getIn(errors, fieldName))) {
-    return {
-      borderColor: "red"
-    };
-  }
-}
-
-const initialValues = {
-  email: "",
-  password: "",
-  password2: ""
-};
-
-export default function Login() {
   return (
     <section className="register">
       <div className="wrapper">
@@ -156,3 +141,5 @@ export default function Login() {
     </section>
   );
 }
+
+export default withRouter(Register);
