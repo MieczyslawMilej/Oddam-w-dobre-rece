@@ -15,12 +15,12 @@ Live preview: [LINK](https://mieczyslawmilej.github.io/Oddam-w-dobre-rece/).
 
 - React (Hooks, Router)
 - Formik (Walidacja)
-- Firebase (Autoryzacja użytkownika, Baza danych [implementacja w toku])
+- Firebase (Autoryzacja użytkownika, Baza danych-[implementacja w toku])
 - React-Scroll
 - Context API
 - Sass
 
-###### To be added:
-- Redux (Zamiana z Contextu)
+###### Planowana implementacja :
+- Redux (Zamiana z Context API)
 - CSSTransition
 - Gsap (Animacje)
