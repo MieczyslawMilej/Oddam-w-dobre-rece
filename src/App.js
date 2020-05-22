@@ -8,7 +8,7 @@ import Logout from "./components/Logout";
 import GiveAway from "./components/GiveAway";
 import { AuthProvider } from "./Auth.js";
 
-function App() {
+export default function App() {
   return (
     <AuthProvider>
       <Router>
@@ -25,5 +25,3 @@ function App() {
     </AuthProvider>
   );
 }
-
-export default App;
