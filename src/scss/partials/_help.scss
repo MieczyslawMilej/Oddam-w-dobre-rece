@@ -1,0 +1,80 @@
+.help {
+  .wrapper {
+    max-width: 1600px;
+    padding-bottom: 80px;
+
+    h1 {
+      padding: 70px 0 25px 0;
+    }
+  }
+}
+
+.btn-wrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+  .btn {
+    font-size: 24px;
+    text-transform: none;
+    width: 208px;
+    line-height: 100%;
+    padding: 23px 42px;
+    // min-width: 208px;
+
+    &:not(.active) {
+      border: none;
+    }
+  }
+}
+
+.description {
+  max-width: 640px;
+  margin: 70px auto 50px auto;
+  font-size: 22px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.organization {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  text-align: left;
+
+  & :first-child {
+    margin-right: 10px;
+  }
+}
+
+.help-title {
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.help-subtitle {
+  font-size: 18px;
+  line-height: 22px;
+
+  &.right {
+    text-align: right;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+
+  .pagination-btn {
+    margin: 10px;
+    padding: 0 10px;
+    min-width: 0;
+    font-size: 18px;
+    line-height: 24px;
+
+    &:not(.active) {
+      border-color: transparent;
+    }
+  }
+}

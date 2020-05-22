@@ -1,0 +1,65 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .login-nav {
+    display: flex;
+    padding-top: 2rem;
+
+    li a {
+      padding: 9px 10px;
+      text-decoration: none;
+      color: $color-login-text;
+      cursor: pointer;
+      font-size: 14px;
+
+      &.register-link {
+        border: 1px solid $color-organizations-bg;
+        padding-left: 10px;
+      }
+
+      &:hover {
+        color:$color-organizations-bg;
+        transition: color 0.2s ease;
+      }
+    }
+  }
+
+  .main-nav {
+    @extend .login-nav;
+    margin-top: 17px;
+
+    & .active {
+      border-bottom: 1px solid $color-organizations-bg;
+    }
+
+    li {
+      margin-left: 5px;
+
+      a {
+        padding: 9px 0;
+        margin: 0 20px;
+        transition: width 0.3s ease-out;
+        position: relative;
+        font-size: 18px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          transform: scaleX(0);
+          height: 1px;
+          background-color: $color-organizations-bg;
+        }
+      }
+
+      & :hover::after {
+        transition: all 0.3s ease-out;
+        transform: scaleX(1);
+      }
+    }
+  }
+}

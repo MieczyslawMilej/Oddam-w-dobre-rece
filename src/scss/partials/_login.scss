@@ -1,0 +1,30 @@
+.login .wrapper, .register .wrapper, .logout .wrapper {
+  display: flex;
+  flex-direction: column;
+
+  nav {
+    margin-bottom: 120px;
+  }
+
+  .form {
+    width: 500px;
+    align-self: center;
+    box-shadow: none;
+
+    .input-wrapper {
+      background-color: $color-bg-icons;
+      padding: 40px;
+      margin: 0 65px;
+    }
+
+    .btn-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      .btn {
+        padding: 13px 16px;
+        max-width: 110px;
+      }
+    }
+  }
+}
