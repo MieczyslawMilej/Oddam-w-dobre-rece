@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/Oddam-w-dobre-rece/static/css/main.3783839c.chunk.css",
+    "main.js": "/Oddam-w-dobre-rece/static/js/main.18d4cddf.chunk.js",
+    "main.js.map": "/Oddam-w-dobre-rece/static/js/main.18d4cddf.chunk.js.map",
+    "runtime-main.js": "/Oddam-w-dobre-rece/static/js/runtime-main.68f3fbba.js",
+    "runtime-main.js.map": "/Oddam-w-dobre-rece/static/js/runtime-main.68f3fbba.js.map",
+    "static/js/2.b3eb0926.chunk.js": "/Oddam-w-dobre-rece/static/js/2.b3eb0926.chunk.js",
+    "static/js/2.b3eb0926.chunk.js.map": "/Oddam-w-dobre-rece/static/js/2.b3eb0926.chunk.js.map",
+    "index.html": "/Oddam-w-dobre-rece/index.html",
+    "precache-manifest.b984e728e30c888c58eac8e181af3c59.js": "/Oddam-w-dobre-rece/precache-manifest.b984e728e30c888c58eac8e181af3c59.js",
+    "service-worker.js": "/Oddam-w-dobre-rece/service-worker.js",
+    "static/css/main.3783839c.chunk.css.map": "/Oddam-w-dobre-rece/static/css/main.3783839c.chunk.css.map",
+    "static/js/2.b3eb0926.chunk.js.LICENSE.txt": "/Oddam-w-dobre-rece/static/js/2.b3eb0926.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/Oddam-w-dobre-rece/static/media/Form-Hero-Image.3bee335a.jpg",
+    "static/media/Decoration.svg": "/Oddam-w-dobre-rece/static/media/Decoration.2290784e.svg",
+    "static/media/Facebook.svg": "/Oddam-w-dobre-rece/static/media/Facebook.df65b6c0.svg",
+    "static/media/Home-Hero-Image.jpg": "/Oddam-w-dobre-rece/static/media/Home-Hero-Image.e99903ed.jpg",
+    "static/media/Icon-1.svg": "/Oddam-w-dobre-rece/static/media/Icon-1.91147906.svg",
+    "static/media/Icon-2.svg": "/Oddam-w-dobre-rece/static/media/Icon-2.db91e33e.svg",
+    "static/media/Icon-3.svg": "/Oddam-w-dobre-rece/static/media/Icon-3.2cfe9dfe.svg",
+    "static/media/Icon-4.svg": "/Oddam-w-dobre-rece/static/media/Icon-4.436df0aa.svg",
+    "static/media/Instagram.svg": "/Oddam-w-dobre-rece/static/media/Instagram.703479fd.svg",
+    "static/media/People.jpg": "/Oddam-w-dobre-rece/static/media/People.6fa36651.jpg",
+    "static/media/Signature.svg": "/Oddam-w-dobre-rece/static/media/Signature.e54cfcfc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68f3fbba.js",
+    "static/js/2.b3eb0926.chunk.js",
+    "static/css/main.3783839c.chunk.css",
+    "static/js/main.18d4cddf.chunk.js"
+  ]
+}
