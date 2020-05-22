@@ -1,0 +1,44 @@
+.about {
+  background-color: $color-bg-icons;
+
+  .wrapper {
+    max-width: 1600px;
+    display: flex;
+    flex: 1;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+.about-decoration {
+  margin: 25px 0 50px 0;
+}
+
+  .about-text {
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.6px;
+    max-width: 400px;
+  }
+
+  .signature {
+    padding: 40px ;
+    align-self: flex-end;
+  }
+}
+
+.about-img {
+  overflow: hidden;
+  width: 50%;
+  height: 100%;
+
+  img {
+    height: 100%;
+    width: 135%;
+  }
+}

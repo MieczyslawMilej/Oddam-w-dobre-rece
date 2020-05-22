@@ -1,0 +1,41 @@
+.heading-wrapper {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+
+  .img-wrapper {
+    margin: 25px 0 65px 0;
+  }
+}
+
+.heading {
+  font-size: 38px;
+  letter-spacing: -0.76px;
+  text-align: center;
+  line-height: 55px;
+}
+
+.btn {
+  text-transform: uppercase;
+  display: inline-block;
+  border: 1px solid $color-login-text;
+  padding: 13px 2rem;
+  margin: 0 12px;
+  text-decoration: none;
+  background: white;
+  font-size: 36px;
+  font-weight: 300;
+  font-family: $font-base;
+  line-height: 45px;
+  cursor: pointer;
+  text-align: center;
+  min-width: 300px;
+  transition: all 0.18s ease;
+
+  &:hover {
+    color: $color-organizations-bg;
+    border-color: $color-organizations-bg;
+  }
+}
