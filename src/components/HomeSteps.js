@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
+import {AuthContext } from "../Auth.js"
 
 import decoration from "../assets/Decoration.svg";
 import tshirt from "../assets/Icon-1.svg";
@@ -8,6 +9,8 @@ import magnifying_glass from "../assets/Icon-3.svg";
 import rotation from "../assets/Icon-4.svg";
 
 export default function HomeSteps() {
+
+  const {currentUser} = useContext(AuthContext);
   return (
     <section className="steps">
       <div className="wrapper">
@@ -62,7 +65,7 @@ export default function HomeSteps() {
             </p>
           </div>
         </div>
-        <NavLink to="/login">
+        <NavLink to={currentUser ? "/oddaj-rzeczy" : "/login"}>
           <button className="btn">oddaj<br/>rzeczy</button>
         </NavLink>
       </div>

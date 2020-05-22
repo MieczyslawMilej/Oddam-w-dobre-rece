@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
+import GiveAway from "./components/GiveAway";
 import { AuthProvider } from "./Auth.js";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/wylogowano" component={Logout} />
+            <Route exact path="/oddaj-rzeczy" component={GiveAway} />
           </Switch>
         </div>
       </Router>

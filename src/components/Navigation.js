@@ -14,14 +14,14 @@ export default function Navigation() {
       <ul className="login-nav">
       {currentUser &&
 
-<li>Cześć {currentUser.email}</li>
+<li>Cześć {currentUser.email}!</li>
         }
 
         <li>
           <NavLink to={currentUser ?"" : "/login"}>{currentUser ?"Oddaj rzeczy" : "Zaloguj"}</NavLink>
         </li>
         <li>
-          <NavLink className="register-link" to={currentUser ?"" : "/register"} onClick={currentUser ? ()=> app.auth().signOut() : null}>
+          <NavLink className="register-link" to={currentUser ?"/wylogowano" : "/register"} onClick={currentUser ? ()=> app.auth().signOut() : null}>
             {currentUser ?"Wyloguj" : "Załóż konto"}
           </NavLink>
         </li>

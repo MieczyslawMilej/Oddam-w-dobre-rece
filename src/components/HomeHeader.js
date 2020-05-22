@@ -8,7 +8,7 @@ export default function HomeHeader() {
     <header>
       <div className="wrapper">
         <Navigation />
-        <img className="hero-image" src={heroImage} alt="decoration"/>
+        <img className="hero-image" src={heroImage} alt="box of things to give away"/>
         <HeaderHero />
       </div>
     </header>
