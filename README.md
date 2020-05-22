@@ -1,7 +1,7 @@
 
 # Oddam w dobre ręce (in progress)
 
-Project Live preview: [LINK](https://mieczyslawmilej.github.io/Oddam-w-dobre-rece/public).
+Project Live preview: [LINK](https://mieczyslawmilej.github.io/Oddam-w-dobre-rece/).
 
 ###### Technologies used:
 
