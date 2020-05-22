@@ -1,16 +1,16 @@
 
 # Oddam w dobre ręce (in progress)
 
-Project Live preview: [LINK](https://mieczyslawmilej.github.io/Oddam-w-dobre-rece/).
+Live preview: [LINK](https://mieczyslawmilej.github.io/Oddam-w-dobre-rece/).
 
-###### Technologies used:
+###### Użyte technologie:
 
 - React (Hooks, Router)
-- Formik (Validation)
-- Firebase (User Authentication, Database [implementation in progress])
+- Formik (Walidacja)
+- Firebase (Autoryzacja użytkownika, Baza danych [implementacja w toku])
 - Sass
 
 ###### To be added:
-- Redux (Swap from Context in future)
+- Redux (Zamiana z Contextu)
 - CSSTransition
-- Gsap (Animations)
+- Gsap (Animacje)
